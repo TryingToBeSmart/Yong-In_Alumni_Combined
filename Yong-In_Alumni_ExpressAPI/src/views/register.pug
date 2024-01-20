@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  section.jumbotron.text-center
+    .container
+      h1 Register
+      form(action='/register', method='POST')
+      
+        .form-group
+          label(for='firstName') First Name:
+          input.form-control(type='text', id='firstName', name='firstName', required)
+
+        .form-group
+          label(for='lastName') Last Name:
+          input.form-control(type='text', id='lastName', name='lastName', required)
+          
+        .form-group
+          label(for='email') Email:
+          input.form-control(type='email', id='email', name='email', required)
+
+        .form-group
+          label(for='userName') Username:
+          input.form-control(type='text', id='userName', name='userName', required)
+
+        .form-group
+          label(for='password') Password:
+          input.form-control(type='password', id='password', name='password', required)
+
+        .form-group
+          label(for='terms')
+            input(type='checkbox', id='terms', name='terms', required)
+            |  I agree to the 
+            a(href='/termsAndConditions', target='_blank') Terms and Conditions
+          
+        button.btn.btn-primary(type='submit') Register

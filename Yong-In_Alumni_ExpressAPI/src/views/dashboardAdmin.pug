@@ -1,0 +1,16 @@
+extends layout
+block content
+  section.jumbotron.text-center
+    h1 Welcome, #{firstName}!
+    p This is your Admin view
+    ul.sponsor-list.list-unstyled.row.justify-content-between
+        li.col-lg-3.col-md-4.col-sm-6.mt-3
+            a.btn.btn-primary(href='/admin/editUsers') Edit Users
+        li.col-lg-3.col-md-4.col-sm-6.mt-3
+            a.btn.btn-primary(href='/admin/editNews') Edit News
+        li.col-lg-3.col-md-4.col-sm-6.mt-3
+            a.btn.btn-primary(href='/admin/editSponsors') Edit Sponsors
+        li.col-lg-3.col-md-4.col-sm-6.mt-3
+            a.btn.btn-primary(href='/admin/editCertificate') Edit Certificate
+        li.col-lg-3.col-md-4.col-sm-6.mt-3
+            a.btn.btn-primary(href='/admin/editTermsAndConditions') Edit Terms and Conditions

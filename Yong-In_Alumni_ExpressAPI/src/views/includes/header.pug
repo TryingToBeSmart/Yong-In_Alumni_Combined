@@ -1,0 +1,33 @@
+header.header-bg-custom
+  nav.navbar.navbar-expand-lg.navbar-dark
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarToggler', aria-controls='navbarToggler')
+      span.navbar-toggler-icon
+
+    a.navbar-brand(href='/')
+      img(src='images/logo.jpg', alt='Logo', width='100')
+
+    .collapse.navbar-collapse#navbarToggler
+      ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+        li.nav-item.active
+          a.nav-link(href='/') Home 
+        li.nav-item.active
+          a.nav-link(href='/certificate') Certificate
+        li.nav-item.active
+          a.nav-link(href='/news') News
+        li.nav-item.active
+          a.nav-link(href='/sponsors') Sponsors
+
+      ul.navbar-nav.ml-auto.mt-2.mt-lg-0
+        li.nav-item.active
+          - if (userId) 
+            - if (userRole == 1)
+              a.nav-link(href='/admin/dashboard') Admin Dashboard
+            -else 
+              a.nav-link(href='/dashboard') Dashboard
+            li.nav.item.active 
+              a.nav-link(href='/logout') Sign Out
+          - else
+            li.nav-item.active
+              a.nav-link(href='/register') Register 
+            li.nav-item.active
+              a.nav-link(href='/login') Sign In
