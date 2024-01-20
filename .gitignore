@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# Visual Studio Code workspace file
+Yong-in_Alumni_App_Combine.code-workspace
+
+# npm package lock file
+package-lock.json
