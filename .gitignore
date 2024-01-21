@@ -65,3 +65,6 @@ Yong-in_Alumni_App_Combine.code-workspace
 
 # npm package lock file
 package-lock.json
+
+# TypeScript dist directory
+/dist

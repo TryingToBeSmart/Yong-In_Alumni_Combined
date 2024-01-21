@@ -1,5 +1,5 @@
 // Import necessary modules or define your users array/model
-const users = require("../controllers/usersController");
+const users = require("../users/users.controller");
 
 // Function to render the register page
 const renderRegister = (req, res) => {

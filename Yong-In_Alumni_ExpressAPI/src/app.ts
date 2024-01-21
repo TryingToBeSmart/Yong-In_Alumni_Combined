@@ -5,12 +5,13 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const certificateRouter = require('./routes/certificateRoutes');
-const usersRoutes = require('./routes/usersRoutes');
-const loginRoutes = require('./routes/loginRoutes');
+const usersRoutes = require('./users/users.routes');
+const loginRoutes = require('./login/login.routes');
 const authRoutes = require('./routes/authRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes'); 
-const adminDashboardRoutes = require('./routes/adminDashboardRoutes'); 
-const logoutRoutes = require('./routes/logoutRoutes');
+const adminDashboardRoutes = require('./admin/adminDashboard.routes'); 
+const adminEditUsersRoutes = require('./admin/editUsers.routes');
+const logoutRoutes = require('./logout/logout.routes');
 const registerRoutes = require('./routes/registerRoutes');
 const sponsorRoutes = require('./routes/sponsorRoutes');
 const newsRoutes = require('./routes/newsRoutes');
@@ -71,6 +72,7 @@ app.use('/sponsors', sponsorRoutes);
 app.use('/news', newsRoutes);
 app.use('/termsAndConditions', termsAndConditionsRoutes);
 app.use('/admin/dashboard', isAdminAuthenticated, adminDashboardRoutes); // Use isAdminAuthenticated middleware for the dashboard
+app.use('/admin/editUsers', isAdminAuthenticated, adminEditUsersRoutes); // Admin Edit user
 app.use('/dashboard', isAuthenticated, dashboardRoutes); // Use isAuthenticated middleware for the dashboard
 
 

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { isAuthenticated } = require('../middleware/authMiddleware');
 const bcrypt = require('bcrypt');
-const users = require('../models/usersModel');
+const users = require('../users/users.model');
 
 // Secure routes
 router.get('/dashboard', isAuthenticated, (req, res) => {

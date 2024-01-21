@@ -1,4 +1,4 @@
-const users = require('../models/usersModel'); 
+const users = require('../users/users.model'); 
 
 const dashboardController = (req, res) => {
   const userId = req.session.userId;

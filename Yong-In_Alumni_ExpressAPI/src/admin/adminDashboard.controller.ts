@@ -1,7 +1,7 @@
-const users = require('../models/usersModel'); 
+const users = require('../users/users.model'); 
 
 const adminDashboardController = (req, res) => {
-  const userId = req.session.userId;
+  const userId = req.session.userId; // Keep track of this user who is logged in
 
   // Fetch the user data using the user ID
   const user = users.find((user) => user.id === userId);
