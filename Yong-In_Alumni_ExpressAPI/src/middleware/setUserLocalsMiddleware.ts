@@ -1,5 +1,6 @@
 // Middleware function to set user data for all views
-const setUserLocals = (req, res, next) => {
+// Probably won't need this
+export const setUserLocals = (req, res, next) => {
   res.locals.userId = req.session.userId || null;
   res.locals.firstName = req.session.firstName || null;
   res.locals.lastName = req.session.lastName || null;
@@ -9,5 +10,3 @@ const setUserLocals = (req, res, next) => {
 //   res.locals.userPassword = req.session.userPassword || null;
   next();
 };
-
-module.exports = setUserLocals;

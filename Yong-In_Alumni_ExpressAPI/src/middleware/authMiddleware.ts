@@ -1,4 +1,4 @@
-const isAuthenticated = (req, res, next) => {
+export const isAuthenticated = (req, res, next) => {
   if (req.session && req.session.userId) {
     // User is authenticated
     return next();
@@ -9,7 +9,7 @@ const isAuthenticated = (req, res, next) => {
 };
 
 // Check if user is Admin
-const isAdminAuthenticated = (req, res, next) => {
+export const isAdminAuthenticated = (req, res, next) => {
   if (req.session && req.session.userRole === 1) {
     // User is authenticated
     return next();
@@ -18,8 +18,3 @@ const isAdminAuthenticated = (req, res, next) => {
     res.redirect("/dashboard");
   }
 };
-
-module.exports = { 
-  isAuthenticated, 
-  isAdminAuthenticated
- };

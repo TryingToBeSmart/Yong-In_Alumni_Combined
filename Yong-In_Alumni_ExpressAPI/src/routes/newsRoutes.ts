@@ -5,4 +5,4 @@ const newsController = require('../controllers/newsController');
 // Render news page
 router.get('/', newsController.renderNews);
 
-module.exports = router;
+export default router;

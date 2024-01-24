@@ -6,4 +6,4 @@ router.get('/', function(req, res, next) {
   res.render('certificate');
 });
 
-module.exports = router;
+export default router;

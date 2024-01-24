@@ -5,4 +5,4 @@ const termsAndConditionsController = require('../controllers/termsAndConditionsC
 // Render news page
 router.get('/', termsAndConditionsController.renderTermsAndConditions);
 
-module.exports = router;
+export default router;

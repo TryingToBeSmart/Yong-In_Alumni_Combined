@@ -5,4 +5,4 @@ const sponsorController = require('../controllers/sponsorController');
 // Render sponsor page
 router.get('/', sponsorController.renderSponsor);
 
-module.exports = router;
+export default router;

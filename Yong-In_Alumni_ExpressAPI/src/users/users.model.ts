@@ -5,10 +5,10 @@ export interface User {
   email: string;
   userName: string;
   password: string;
-  membership_status: string;
-  membership_expiration: Date | null;
-  created_at: Date;
-  updated_at: Date;
+  membershipStatus: string;
+  membershipExpiration: Date | null;
+  createdAt: Date;
+  updatedAt: Date;
   role: number;
 }
 

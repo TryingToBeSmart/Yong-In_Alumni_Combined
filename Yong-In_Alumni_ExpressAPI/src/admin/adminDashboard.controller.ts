@@ -1,17 +1,15 @@
 const users = require('../users/users.model'); 
 
 const adminDashboardController = (req, res) => {
-  const userId = req.session.userId; // Keep track of this user who is logged in
-
-  // Fetch the user data using the user ID
-  const user = users.find((user) => user.id === userId);
+  // Get the user data from the session
+  const user = req.session.user;
 
   if (!user) {
     // Handle if user not found
     return res.status(404).send('User not found');
   }
 
-  res.render('dashboardAdmin', {title: "Admin Dashboard"});
+  res.render('dashboardAdmin', { title: "Admin Dashboard", user }); // Pass user data to the view
 };
 
 module.exports = adminDashboardController;

@@ -24,6 +24,16 @@ export const getUserById = async (userId: string): Promise<User | null> => {
 };
 
 /**
+ * Get a user by ID from the database.
+ * @param {string} userName - The ID of the user to retrieve.
+ * @returns {Promise<User | null>} A promise that resolves to the user or null if not found.
+ */
+export const getUserByUserName = async (userId: string): Promise<User | null> => {
+  const users = await execute<User[]>(usersQueries.getUserByUserNameQuery, [userId]);
+  return users.length > 0 ? users[0] : null;
+};
+
+/**
  * Create a new user in the database.
  * @param {User} newUser - The user object to be created.
  * @returns {Promise<void>} A promise that resolves when the user is created.
@@ -36,10 +46,10 @@ export const createUser = async (newUser: User): Promise<void> => {
     newUser.email,
     newUser.userName,
     newUser.password,
-    newUser.membership_status,
-    newUser.membership_expiration,
-    newUser.created_at,
-    newUser.updated_at,
+    newUser.membershipStatus,
+    newUser.membershipExpiration,
+    newUser.createdAt,
+    newUser.updatedAt,
     newUser.role,
   ]);
 };
@@ -56,9 +66,9 @@ export const updateUser = async (updatedUser: User): Promise<void> => {
     updatedUser.email,
     updatedUser.userName,
     updatedUser.password,
-    updatedUser.membership_status,
-    updatedUser.membership_expiration,
-    updatedUser.updated_at,
+    updatedUser.membershipStatus,
+    updatedUser.membershipExpiration,
+    updatedUser.updatedAt,
     updatedUser.role,
     updatedUser.id,
   ]);

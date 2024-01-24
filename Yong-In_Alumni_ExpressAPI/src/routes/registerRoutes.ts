@@ -8,4 +8,4 @@ router.get('/', registerController.renderRegister);
 // Handle register form submission
 router.post('/', registerController.registerUser);
 
-module.exports = router;
+export default router;

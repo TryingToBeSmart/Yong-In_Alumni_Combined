@@ -52,10 +52,10 @@ export const createUser = async (req, res) => {
       email,
       userName,
       password: hashedPassword,
-      membership_status: 'provisional',
-      membership_expiration: null,
-      created_at: new Date(),
-      updated_at: new Date(),
+      membershipStatus: 'provisional',
+      membershipExpiration: null,
+      createdAt: new Date(),
+      updatedAt: new Date(),
       role: 2,
     };
 
@@ -92,10 +92,10 @@ export const updateUser = async (req, res) => {
       email: email || foundUser[0].email,
       userName: userName || foundUser[0].userName,
       password: password ? await hash(password, 10) : foundUser[0].password,
-      membership_status: foundUser[0].membership_status,
-      membership_expiration: foundUser[0].membership_expiration,
-      created_at: foundUser[0].created_at,
-      updated_at: new Date(),
+      membershipStatus: foundUser[0].membership_status,
+      membershipExpiration: foundUser[0].membership_expiration,
+      createdAt: foundUser[0].created_at,
+      updatedAt: new Date(),
       role: foundUser[0].role,
     };
 

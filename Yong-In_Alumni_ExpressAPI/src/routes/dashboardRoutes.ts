@@ -5,5 +5,4 @@ const dashboardController = require('../controllers/dashboardController');
 
 // Secure route for dashboard
 router.get('/', isAuthenticated, dashboardController);
-
-module.exports = router;
+export default router;

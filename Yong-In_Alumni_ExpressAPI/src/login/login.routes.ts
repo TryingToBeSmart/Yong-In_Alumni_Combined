@@ -8,4 +8,4 @@ router.get('/', loginController.renderLogin);
 // Handle login form submission
 router.post('/', loginController.loginUser);
 
-module.exports = router;
+export default router;
